@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche 918 Spyder</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Cedarville+Cursive&family=Changa:wght@200..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #1A1A1D;
+        }
+        .container{
+            width:100%; 
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container .header{
+            width:100%;
+            margin: 2% auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .container .header .logo {
+            width: 70px;
+            height: 70px;
+            background: url(/logos/porsche.png);
+            background-size: cover;
+            background-repeat: no-repeat; 
+        }
+        .container .header .nav ul{
+            display: flex;
+            gap: 70px;
+        }
+        .container .header .nav ul li{
+            font-size: 14px;
+            font-weight: 500;
+            list-style: none;
+            letter-spacing: 1px;
+        }
+        .container .header .nav ul li a{
+            padding: 10px;
+            outline: none;
+            text-decoration: none;
+            cursor: pointer;
+            color: white;
+        }
+        .container .header .nav ul li a:hover {
+            border-bottom: 2px solid #4facfe;
+        }
+        .container .header .buttons {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+        .container .header .buttons button {
+            width: 120px;
+            height: 40px;
+            border-radius: 20px;
+            border:none;
+            outline:none;
+            cursor: pointer;
+            font-weight: 500;
+            color: #242b2e;
+        }
+        .container .header .buttons button:hover {
+            color: #ffff;
+            background-image: linear-gradient(to right,#7A1CAC 20%, #c45dfb 80%);
+        }
+        .container .main-content {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+            padding: 30px;
+        }
+        .container .main-content .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .container .main-content .content h1 {
+            font-size: 52px;
+            letter-spacing: 2px;
+        }
+        .container .main-content .content span {
+            font-size: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .container .main-content .content p {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .container .main-content .car-img {
+            width: 100%;
+            height: 300px;
+            background:url(/images/porsche.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container .features {
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .container .features .engine,.transmission,.performance,.brake {
+            width: 300px;
+            height: 90px;
+            padding: 4px;
+            margin: 25px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+        }
+        .container .features .engine img,.transmission img,.performance img,.brake img {
+            width: 100px;
+            height: 80px;
+            padding: 3px;
+            border-radius: 10px;
+        }
+        .container .features .engine:hover,.transmission:hover,.performance:hover,.brake:hover {
+            background-image: linear-gradient(to right,#7A1CAC 20%, #c45dfb 80%);
+            color: black;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="coming soon.html">Services</a></li>
+                    <li><a href="profile.html">About Developer</a></li>
+                    <li><a href="coming soon.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="buttons">
+                <button>Book Now</button>
+                <button>Test Drive</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="content">
+                <h1>Porsche 918 <br><span>Spyder</span></h1>
+                    <p>Driven by Dreams.</p>
+            </div>
+            <div class="car-img">
+
+            </div>
+        </div>
+        <div class="features">
+            <div class="engine">
+                <img src="images/pengine.jpg">
+                <p>608 horsepower (453 kW) Naturally aspirated V8 engine</p>
+            </div>
+            <div class="transmission">
+                <img src="images/ptrans.jpg">
+                <p>7-speed PDK (Porsche Doppelkupplung) dual-clutch transmission</p>
+            </div>
+            <div class="performance">
+                <img src="images/pperf.jpg">
+                <p>Top Speed: 214 mph (344 km/h), 0-60 mph in 2.5 s</p>
+            </div>
+            <div class="brake">
+                <img src="images/pbrake.jpg">
+                <p>Carbon-ceramic brakes (Porsche Ceramic Composite Brakes - PCCB)</p>
+            </div>
+        </div>         
+    </div>
+</body>
