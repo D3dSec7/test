@@ -145,6 +145,22 @@
             color: black;
             font-weight: 500;
         }
+
+        @media (max-width: 768px) {
+    .container .header .nav ul {
+        flex-direction: column; /* Stack nav items vertically on smaller screens */
+        gap: 20px;
+    }
+
+    .container .main-content {
+        grid-template-columns: 1fr; /* Single column layout for small screens */
+    }
+
+    .container .features {
+        flex-direction: column; /* Stack features vertically */
+        align-items: center;
+    }
+}
     </style>
 </head>
 <body>
