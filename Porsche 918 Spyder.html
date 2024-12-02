@@ -7,119 +7,139 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Cedarville+Cursive&family=Changa:wght@200..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
+
         body {
             background-color: #1A1A1D;
         }
-        .container{
-            width:100%; 
-            height: 100%;
+
+        .container {
+            width: 100%; 
+            height: auto; /* Change from fixed height to auto */
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .container .header{
-            width:100%;
+        .header {
+            width: 100%;
             margin: 2% auto;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
         }
-        .container .header .logo {
+
+        .logo {
             width: 70px;
             height: 70px;
             background: url(/logos/porsche.png);
             background-size: cover;
             background-repeat: no-repeat; 
         }
-        .container .header .nav ul{
+
+        .nav ul {
             display: flex;
             gap: 70px;
         }
-        .container .header .nav ul li{
+
+        .nav ul li {
             font-size: 14px;
             font-weight: 500;
             list-style: none;
             letter-spacing: 1px;
         }
-        .container .header .nav ul li a{
+
+        .nav ul li a {
             padding: 10px;
             outline: none;
             text-decoration: none;
             cursor: pointer;
             color: white;
         }
-        .container .header .nav ul li a:hover {
+
+        .nav ul li a:hover {
             border-bottom: 2px solid #4facfe;
         }
-        .container .header .buttons {
+
+        .buttons {
             display: flex;
             padding: 20px;
             gap: 20px;
         }
-        .container .header .buttons button {
+
+        .buttons button {
             width: 120px;
             height: 40px;
             border-radius: 20px;
-            border:none;
-            outline:none;
+            border: none;
+            outline: none;
             cursor: pointer;
             font-weight: 500;
             color: #242b2e;
         }
-        .container .header .buttons button:hover {
+
+        .buttons button:hover {
             color: #ffff;
-            background-image: linear-gradient(to right,#7A1CAC 20%, #c45dfb 80%);
+            background-image: linear-gradient(to right, #7A1CAC 20%, #c45dfb 80%);
         }
-        .container .main-content {
+
+        .main-content {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 30px;
         }
-        .container .main-content .content {
+
+        .content {
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
             color: white;
         }
-        .container .main-content .content h1 {
-            font-size: 52px;
+
+        .content h1 {
+            font-size: 4vw; /* Responsive font size */
             letter-spacing: 2px;
         }
-        .container .main-content .content span {
+
+        .content span {
             font-size: 30px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        .container .main-content .content p {
+
+        .content p {
             margin-top: 10px;
-            font-size: 20px;
+            font-size: 2vw; /* Responsive font size */
             font-weight: 500;
         }
-        .container .main-content .car-img {
+
+        .car-img {
             width: 100%;
-            height: 300px;
-            background:url(/images/porsche.png);
+            height: auto; /* Set height to auto for responsiveness */
+            background: url(/images/porsche.png);
             background-repeat: no-repeat;
             background-size: cover;
         }
-        .container .features {
+
+        .features {
             width: 100%;
             padding: 10px;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping of features */
         }
-        .container .features .engine,.transmission,.performance,.brake {
+
+        .engine, .transmission, .performance, .brake {
             width: 300px;
             height: 90px;
             padding: 4px;
@@ -133,81 +153,73 @@
             justify-content: center;
             cursor: pointer;
             color: white;
+            background-color: #2a2a2a; /* Background color for features */
+            transition: background-color 0.3s;
         }
-        .container .features .engine img,.transmission img,.performance img,.brake img {
-            width: 100px;
-            height: 80px;
-            padding: 3px;
-            border-radius: 10px;
-        }
-        .container .features .engine:hover,.transmission:hover,.performance:hover,.brake:hover {
-            background-image: linear-gradient(to right,#7A1CAC 20%, #c45dfb 80%);
-            color: black;
-            font-weight: 500;
+
+        .engine:hover, .transmission:hover, .performance:hover, .brake:hover {
+            background-color: #4facfe; /* Change background on hover */
         }
 
         @media (max-width: 768px) {
-    .container .header .nav ul {
-        flex-direction: column; /* Stack nav items vertically on smaller screens */
-        gap: 20px;
-    }
+            .nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .container .main-content {
-        grid-template-columns: 1fr; /* Single column layout for small screens */
-    }
+            .main-content {
+                grid-template-columns: 1fr; /* Stack columns on small screens */
+            }
 
-    .container .features {
-        flex-direction: column; /* Stack features vertically */
-        align-items: center;
-    }
-}
+            .content h1 {
+                font-size: 6vw; /* Adjust heading size for smaller screens */
+            }
+
+            .content p {
+                font-size: 4vw; /* Adjust paragraph size for smaller screens */
+            }
+
+            .engine, .transmission, .performance, .brake {
+                width: 90%; /* Make features take more width on small screens */
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">
 
-            </div>
-            <div class="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="coming soon.html">Services</a></li>
-                    <li><a href="profile.html">About Developer</a></li>
-                    <li><a href="coming soon.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="buttons">
-                <button>Book Now</button>
-                <button>Test Drive</button>
-            </div>
+<div class="container">
+    <header class="header">
+        <div class="logo"></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <button>Buy Now</button>
+            <button>Test Drive</button>
         </div>
-        <div class="main-content">
-            <div class="content">
-                <h1>Porsche 918 <br><span>Spyder</span></h1>
-                    <p>Driven by Dreams.</p>
-            </div>
-            <div class="car-img">
+    </header>
 
-            </div>
+    <div class="main-content">
+        <div class="content">
+            <h1>Porsche 918 Spyder</h1>
+            <span>The Ultimate Hybrid Supercar</span>
+            <p>Experience the blend of performance and efficiency.</p>
         </div>
-        <div class="features">
-            <div class="engine">
-                <img src="images/pengine.jpg">
-                <p>608 horsepower (453 kW) Naturally aspirated V8 engine</p>
-            </div>
-            <div class="transmission">
-                <img src="images/ptrans.jpg">
-                <p>7-speed PDK (Porsche Doppelkupplung) dual-clutch transmission</p>
-            </div>
-            <div class="performance">
-                <img src="images/pperf.jpg">
-                <p>Top Speed: 214 mph (344 km/h), 0-60 mph in 2.5 s</p>
-            </div>
-            <div class="brake">
-                <img src="images/pbrake.jpg">
-                <p>Carbon-ceramic brakes (Porsche Ceramic Composite Brakes - PCCB)</p>
-            </div>
-        </div>         
+        <div class="car-img"></div>
     </div>
+
+    <div class="features">
+        <div class="engine">Engine: 4.6L V8</div>
+        <div class="transmission">Transmission: 7-speed PDK</div>
+        <div class="performance">Performance: 0-60 mph in 2.5s</div>
+        <div class="brake">Brakes: Carbon-ceramic</div>
+    </div>
+</div>
+
 </body>
+</html>
